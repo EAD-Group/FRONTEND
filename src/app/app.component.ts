@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'novo-frontend';
+  corpo = '' 
+
+  onChangeEditor(event: any) {
+    this.corpo = escape(event['html'])
+  }
 }

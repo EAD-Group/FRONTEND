@@ -1,0 +1,33 @@
+<div class="feed mt-2">
+    <div class="adicionar-post">
+        <img width="60px" class="p-1"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"
+            alt="">
+        <textarea [(ngModel)]="novoPost" (keyup.enter)="adicionarPost()" placeholder="Adicionar Post" class="form-control"></textarea>
+    </div>
+    <div *ngFor="let post of posts" class="feed-list mt-3 p-2 shadow">
+        <div class="comentario">
+            <div class="autor">
+                <img width="30px" class="p-1"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"
+                    alt="">
+                <p>{{post.usuario}}</p>
+            </div>
+            <p class="text-secondary">{{post.corpo}}</p>
+            <div class="ml-5 comentario-lista">
+                <input [formControl]="novoComentario" (keyup.enter)="adicionarComentario(post.id)" class="form-control mt-2" type="text" placeholder="Adicionar comentario" >
+                <div *ngFor="let comentario of post.comentarios" class="comentario-item">
+                    <div class="comentario mt-1">
+                        <div class="autor">
+                            <img width="30px" class="p-1"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"
+                                alt="">
+                            <p>{{comentario.usuario}}</p>
+                        </div>
+                        <p>{{comentario.corpo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

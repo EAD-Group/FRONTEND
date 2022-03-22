@@ -1,0 +1,19 @@
+.comentario  {
+
+    margin-left: 20px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.adicionar-post {
+    display: flex;
+    justify-content: space-between;
+}
+
+.autor {
+    display: flex;
+    justify-content: start;
+    margin-left: -20px ;
+}

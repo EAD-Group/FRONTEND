@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="adicionar-row">
+            <a routerLink="/avaliacoes/adicionar"  class="add-button btn btn-success" >Adicionar Avaliação</a>
+        </div>
+        <div class="col mt-3">
+            <ul class="list-group">
+                <li (click)="redirecionarParaCorrecao(avaliacao.id)" *ngFor="let avaliacao of avaliacoes" class="list-group-item">{{avaliacao.titulo}} ({{avaliacao.enviadas.length}} enviadas)</li>
+            </ul>
+            <div *ngIf="avaliacoes.length === 0" class="conatiner banner">
+                <div class="row">
+                    <div class="col text-center">
+                        <img width="300" src="https://cdn-icons-png.flaticon.com/512/2916/2916315.png" alt="">
+                        <h1>Avaliações</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

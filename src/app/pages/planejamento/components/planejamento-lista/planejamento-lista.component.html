@@ -1,0 +1,24 @@
+<div class="accordion" id="accordionExample">
+    <div *ngFor="let compromisso of compromissos | filtrarCompromisso" class="accordion-item">
+        <h2 class="accordion-header" id="{{compromisso.id}}">
+            <button class="accordion-button" type="button"  data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{ compromisso.titulo }} ({{compromisso.data | date}})
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show"  aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                {{compromisso.corpo}}
+            </div>
+        </div>
+    </div>
+    <div *ngIf="compromissos.length === 0" class="container banner">
+        <div class="row">
+            <div class="col text-center">
+                <img width="300" src="https://cdn-icons-png.flaticon.com/512/42/42415.png" alt="">
+                <h1>Planejamento</h1>
+            </div>
+        </div>
+    </div>
+</div>

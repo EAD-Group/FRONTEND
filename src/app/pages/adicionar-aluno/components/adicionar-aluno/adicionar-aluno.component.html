@@ -1,0 +1,19 @@
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col-4">
+            <app-adicionar-aluno-lista></app-adicionar-aluno-lista>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col">
+                    <div class="adicionar-aluno">
+                        <a routerLink="/alunos/add" class="btn btn-success">Adicionar Aluno</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

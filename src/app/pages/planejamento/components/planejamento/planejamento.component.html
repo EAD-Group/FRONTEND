@@ -1,0 +1,10 @@
+<div class="container mt-3">
+    <div class="row">
+        <div [ngClass]="{ 'mx-auto': eAluno() }" class="col-8">
+            <app-planejamento-lista></app-planejamento-lista>
+        </div>
+        <div *ngIf="eProfessor()" class="col-4">
+            <app-planejamento-adicionar></app-planejamento-adicionar>
+        </div>
+    </div>
+</div>

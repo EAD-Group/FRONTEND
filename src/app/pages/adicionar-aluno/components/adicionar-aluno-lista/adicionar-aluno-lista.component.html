@@ -1,0 +1,10 @@
+<div class="lista">
+    <div class="busca py-2">
+        <input [(ngModel)]="busca" type="text" class="form-control" placeholder="Buscar Aluno">
+    </div>
+    <div class="listagem">
+        <ul class="list-group">
+            <li (click)="redirecionarAluno(aluno.id!)" *ngFor="let aluno of alunos | filtrarAluno:busca" class="list-group-item">{{aluno.nome}}</li>
+        </ul>
+    </div>
+</div>

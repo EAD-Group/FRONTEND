@@ -1,3 +1,10 @@
+import { AutenticadoGuard } from './guards/autenticado.guard';
+import { AutenticacaoModule } from './autenticacao/autenticacao.module';
+import { HomeModule } from './pages/home/home.module';
+import { QuillModule } from 'ngx-quill';
+import { AnotacoesModule } from './pages/anotacoes/anotacoes.module';
+import { PlanejamentoModule } from './pages/planejamento/planejamento.module';
+import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,9 +17,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    PlanejamentoModule,
+    AnotacoesModule,
+    HomeModule,
+    QuillModule.forRoot(),
+    AutenticacaoModule
   ],
-  providers: [],
+  providers: [AutenticadoGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

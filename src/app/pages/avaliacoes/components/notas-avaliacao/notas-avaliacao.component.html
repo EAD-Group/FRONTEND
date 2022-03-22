@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let avaliacao of avaliacoes; let i = index"  class="avaliacao-item">
+                <h3>{{avaliacao.titulo}}</h3>
+                <h2 *ngIf="getAvaliacaoFeita(i).corrigida;else naoCorrigida " class="text-success" >{{getAvaliacaoFeita(i).nota}}</h2>
+                <ng-template #naoCorrigida>
+                    <h2>Não corrigida</h2>
+                </ng-template>
+            </div>
+        </div>
+        <div *ngIf="avaliacoes.length == 0" class="container banner">
+            <div class="row">
+                <div class="col text-center">
+                    <img width="300" src="https://cdn-icons-png.flaticon.com/512/2374/2374322.png" alt="">
+                    <h1>Avaliações corrigidas</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

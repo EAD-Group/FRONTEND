@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{avaliacao.titulo}}</h1>
+            <h3>{{avaliacao.descricao}}</h3>
+            <quill-view [content]="avaliacao.avaliacao" format="html" theme="snow"></quill-view>
+            <quill-editor (onEditorChanged)="onChangeEditor($event)"></quill-editor>
+            <button class="btn btn-success w-100" (click)="enviarResultado()" >Enviar</button>
+        </div>
+    </div>
+</div>

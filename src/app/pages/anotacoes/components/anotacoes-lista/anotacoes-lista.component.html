@@ -1,0 +1,11 @@
+<div class="lista">
+    <div class="busca py-2">
+        <input [(ngModel)]="busca" type="text" class="form-control" placeholder="Buscar Anotacao">
+    </div>
+    <div class="listagem">
+        <p *ngIf="anotacoes.length === 0" class="text-center">Nenhuma anotação</p>
+        <ul class="list-group">
+            <li (click)="redirecionarAnotacao(anotacao.id!)" *ngFor="let anotacao of anotacoes | filtrarAnotacao:busca" class="list-group-item">{{anotacao.titulo}}</li>
+        </ul>
+    </div>
+</div>

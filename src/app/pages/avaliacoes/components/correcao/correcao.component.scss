@@ -1,0 +1,26 @@
+.avaliacao {
+    // border: 1px solid black;
+    padding: 20px;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    justify-content: end;
+}
+
+.nota-input {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}

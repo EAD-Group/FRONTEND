@@ -1,0 +1,28 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let avaliacao of avaliacao.enviadas" class="avaliacao shadow">
+                <div class="status">
+                    <h3>{{avaliacao.aluno}}</h3>
+                    <p *ngIf="!avaliacao.corrigida;else corrigida" class="text-danger" >Pendente</p>
+                    <ng-template #corrigida>
+                        <p class="text-success" >Corrigida - {{avaliacao.nota}} pontos </p>
+                    </ng-template>
+                </div>
+                <quill-view [content]="avaliacao.avaliacaoFeita" format="html" theme="snow"></quill-view>
+                <div class="info">
+                    <input [formControl]="notaInput" class="nota-input" type="number">
+                    <button (click)="corrigir(avaliacao.id)" class="btn btn-success" >Corrigir</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="avaliacao.enviadas.length === 0" class="container banner">
+            <div class="row">
+                <div class="col text-center">
+                    <img width="300" src="https://icons.iconarchive.com/icons/iconsmind/outline/512/Inbox-Empty-icon.png" alt="">
+                    <h1>Nenhuma atividade foi enviada</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

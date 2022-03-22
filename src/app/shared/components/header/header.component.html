@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/" >Sala de aula</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul *ngIf="estaAutenticado()" class="navbar-nav">
+                <li *ngIf="estaAutenticado()" class="nav-item">
+                    <a class="nav-link" routerLink="planejamento">Planejamento</a>
+                </li>
+                <li *ngIf="estaAutenticado()" class="nav-item">
+                    <a class="nav-link" routerLink="anotacoes">Anotações</a>
+                </li>
+                <li *ngIf="estaAutenticado() && eProfessor()" class="nav-item">
+                    <a class="nav-link" routerLink="alunos">Alunos</a>
+                </li>
+                <li *ngIf="estaAutenticado() && eProfessor()" class="nav-item">
+                    <a class="nav-link" routerLink="avaliacoes">Avaliações</a>
+                </li>
+                <li *ngIf="estaAutenticado() && eAluno()" class="nav-item">
+                    <a class="nav-link" routerLink="avaliacoes/notas">Notas</a>
+                </li>
+                <li *ngIf="estaAutenticado()" class="nav-item">
+                    <a (click)="logout()" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

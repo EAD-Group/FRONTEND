@@ -1,0 +1,25 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <div>
+                <div class="h1">Adicionar Atividade</div>
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input [(ngModel)]="titulo" id="titulo" class="form-control" type="text">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="descricao">Descrição da atividade</label>
+                    <input [(ngModel)]="descricao" id="descricao" class="form-control" type="text">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="peso">Peso da avaliação</label>
+                    <input [(ngModel)]="peso" id="peso" class="form-control" type="number">
+                </div>
+                <div class="form-group mt-3">
+                    <quill-editor (onEditorChanged)="onChangeEditor($event)"></quill-editor>
+                </div>
+                <button (click)="salvar()" class="btn btn-success mt-3 w-100">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

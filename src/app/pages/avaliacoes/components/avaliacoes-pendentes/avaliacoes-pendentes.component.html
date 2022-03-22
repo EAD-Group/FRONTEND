@@ -1,0 +1,9 @@
+<div class="avaliacoes">
+    <h5 class="text-center">Avaliações Pendentes</h5>
+    <ul *ngIf="avaliacoes.length > 0;else semAvaliacao" class="list-group">
+        <li (click)="redirecionarParaAtividade(avaliacao.id)" *ngFor="let avaliacao of avaliacoes" class="list-group-item">{{avaliacao.titulo}}</li>
+    </ul>
+    <ng-template #semAvaliacao>
+        <p class="text-center">Não há avaliacoes pendentes</p>
+    </ng-template>
+</div>
